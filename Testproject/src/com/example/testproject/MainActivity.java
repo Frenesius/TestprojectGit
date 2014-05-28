@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
 	private int levelProgress2 = 0;
 	private int levelProgress3 = 0;
 	private int levelProgress4 = 0;
-	
+	//heylul
 	//de counter omzetten naar een string (zie code)
 	String stringCounter1;
 	String stringCounter2;
