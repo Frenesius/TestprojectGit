@@ -1,0 +1,42 @@
+<resources>
+
+    <string name="app_name">Testproject</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="socialability_progress_text_view">Socialability</string>
+    <string name="socialability_progress_bar">Socialability progress</string>
+    
+    <string name="health_progress_text_view">Health</string>
+    <string name="health_bar">Health progress</string>
+    
+    <string name="fitnessability_progress_text_view">Fitnessability</string>
+    <string name="fitnessbility_bar">Fitnessbility progress</string>
+    
+    <string name="walkability_progress_text_view">Walkability</string>
+    <string name="walkability_bar">Walkability progress</string>
+   
+    
+    <string name="todo_text_view">Plan</string>
+    <string name="social_button">Social</string>
+    <string name="health_button">Health</string>
+    <string name="fitness_button">Fitness</string>
+    <string name="walk_button">Walk</string>
+    
+    <string name="progress_bar_social">Progress Bar Socialability</string>
+    <string name="progress_bar_health">Progress Bar Health</string>
+    <string name="progress_bar_fitness">Progress Bar Fitnessability</string>
+    <string name="progress_bar_walk">Progress Bar Walkability</string>
+    
+    <string name="level_social">0</string>
+    <string name="level_health">0</string>
+    <string name="level_fitness">0</string>
+    <string name="level_walk">0</string>
+    
+    
+    <string name="social_level_count">0</string>
+    <string name="health_level_count">0</string>
+    <string name="fitness_level_count">0</string>
+    <string name="walk_level_count">0</string>
+    
+    
+</resources>

@@ -1,0 +1,207 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.testproject.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/walkabilityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fitnessabilityTextView"
+        android:layout_alignBottom="@+id/fitnessabilityTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="62dp"
+        android:text="@string/walkability_progress_text_view" />
+
+    <TextView
+        android:id="@+id/healthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/socialabilityTextView"
+        android:layout_alignBottom="@+id/socialabilityTextView"
+        android:layout_alignLeft="@+id/walkabilityTextView"
+        android:text="@string/health_progress_text_view" />
+
+    <ImageView
+        android:id="@+id/progressBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressBar4"
+        android:layout_alignLeft="@+id/progressBar4"
+        android:layout_alignTop="@+id/progressBar1"
+        android:contentDescription="@string/progress_bar_health"
+        android:src="@drawable/bar1_rood" />
+
+    <ImageView
+        android:id="@+id/progressBar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/healthButton"
+        android:layout_alignLeft="@+id/progressBar1"
+        android:layout_alignTop="@+id/progressBar4"
+        android:layout_toLeftOf="@+id/progressBar4"
+        android:contentDescription="@string/progress_bar_fitness"
+        android:src="@drawable/bar1_rood" />
+
+    <ImageView
+        android:id="@+id/progressBar4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/healthButton"
+        android:layout_alignLeft="@+id/healthButton"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/walkabilityTextView"
+        android:contentDescription="@string/progress_bar_walk"
+        android:src="@drawable/bar1_rood" />
+
+    <EditText
+        android:id="@+id/fitnessLevelCountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/socialButton"
+        android:layout_below="@+id/fitnessButton"
+        android:ems="3"
+        android:inputType="number"
+        android:text="@string/fitness_level_count" />
+
+    <Button
+        android:id="@+id/walkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fitnessButton"
+        android:layout_toRightOf="@+id/progressBar3"
+        android:text="@string/walk_button" />
+
+    <ImageView
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/socialabilityTextView"
+        android:layout_toLeftOf="@+id/healthButton"
+        android:contentDescription="@string/progress_bar_social"
+        android:src="@drawable/bar1_rood" />
+
+    <TextView
+        android:id="@+id/socialabilityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fitnessButton"
+        android:layout_alignParentTop="true"
+        android:text="@string/socialability_progress_text_view" />
+
+    <Button
+        android:id="@+id/fitnessButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fitnessLevelCountEditText"
+        android:layout_below="@+id/healthLevelCountEditText"
+        android:text="@string/fitness_button" />
+
+    <Button
+        android:id="@+id/socialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/progressBar3"
+        android:layout_below="@+id/fitnessabilityTextView"
+        android:layout_marginTop="95dp"
+        android:text="@string/social_button" />
+
+    <TextView
+        android:id="@+id/fitnessabilityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progressBar1"
+        android:layout_alignLeft="@+id/progressBar1"
+        android:text="@string/fitnessability_progress_text_view" />
+
+    <EditText
+        android:id="@+id/socialLevelCountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fitnessButton"
+        android:layout_alignParentLeft="true"
+        android:ems="3"
+        android:inputType="number"
+        android:text="@string/social_level_count" />
+
+    <EditText
+        android:id="@+id/healthLevelCountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/walkabilityTextView"
+        android:layout_below="@+id/healthButton"
+        android:layout_marginLeft="20dp"
+        android:ems="3"
+        android:inputType="number"
+        android:text="@string/health_level_count" />
+
+    <Button
+        android:id="@+id/healthButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/socialButton"
+        android:layout_alignBottom="@+id/socialButton"
+        android:layout_alignRight="@+id/walkabilityTextView"
+        android:text="@string/health_button" />
+
+    <EditText
+        android:id="@+id/walkLevelCountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fitnessLevelCountEditText"
+        android:layout_alignBottom="@+id/fitnessLevelCountEditText"
+        android:layout_alignLeft="@+id/healthLevelCountEditText"
+        android:ems="3"
+        android:inputType="number"
+        android:text="@string/walk_level_count" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/levelSocialEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/socialButton"
+        android:layout_toRightOf="@+id/socialLevelCountEditText"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@string/level_social" />
+
+    <EditText
+        android:id="@+id/levelHealthEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/healthButton"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@string/level_health" />
+
+    <EditText
+        android:id="@+id/levelFitnessEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fitnessLevelCountEditText"
+        android:layout_alignBottom="@+id/fitnessLevelCountEditText"
+        android:layout_toRightOf="@+id/fitnessLevelCountEditText"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@string/level_fitness" />
+
+    <EditText
+        android:id="@+id/levelWalkEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/walkButton"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@string/level_walk" />
+
+</RelativeLayout>
