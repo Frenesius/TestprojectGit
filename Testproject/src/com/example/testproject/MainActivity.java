@@ -94,11 +94,7 @@ public class MainActivity extends ActionBarActivity {
 	ImageView barLevelFitness;
 	ImageView barLevelWalk;
 	
-	//knop voor de activiteiten.
-	Button socialBut;
-	Button healthBut;
-	Button fitnessBut;
-	Button walkBut;
+
 	
 	//de tekstveld met levels
 	EditText lvlSocial;
@@ -112,31 +108,29 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //textviews buiten methods, om de bar te benoemen.
         socialAbility = (TextView) findViewById(R.id.socialabilityTextView);
         health = (TextView) findViewById(R.id.healthTextView);
         fitnessAbility = (TextView) findViewById(R.id.fitnessabilityTextView);
         walkAbility = (TextView) findViewById(R.id.walkabilityTextView);
         
-        barLevelSocial = (ImageView) findViewById(R.id.progressBar1);
-        barLevelHealth = (ImageView) findViewById(R.id.progressBar2);
-        barLevelFitness = (ImageView) findViewById(R.id.progressBar3);
-        barLevelWalk = (ImageView) findViewById(R.id.progressBar4);
+       
+        //methods!!!!
+        socialButton();
+        healthButton();
+        fitnessButton();
+        walkButton();
         
-        socialCounter = (EditText) findViewById(R.id.socialLevelCountEditText);
-        healthCounter = (EditText) findViewById(R.id.healthLevelCountEditText);
-        fitnessCounter = (EditText) findViewById(R.id.fitnessLevelCountEditText);
-        walkCounter = (EditText) findViewById(R.id.walkLevelCountEditText);
+
+   }
+	     
         
-        lvlSocial = (EditText) findViewById(R.id.levelSocialEditText);
-        lvlHealth = (EditText) findViewById(R.id.levelHealthEditText);
-        lvlFitness = (EditText) findViewById(R.id.levelFitnessEditText);
-        lvlWalk = (EditText) findViewById(R.id.levelWalkEditText);
-        
-        socialBut = (Button) findViewById(R.id.socialButton);
-        healthBut = (Button) findViewById(R.id.healthButton);
-        fitnessBut = (Button) findViewById(R.id.fitnessButton);
-        walkBut = (Button) findViewById(R.id.walkButton);
-        
+    public void socialButton() {
+
+    	final ImageView barLevelSocial = (ImageView) findViewById(R.id.progressBar1);
+    	final EditText socialCounter = (EditText) findViewById(R.id.socialLevelCountEditText);
+    	final EditText lvlSocial = (EditText) findViewById(R.id.levelSocialEditText);
+        final Button socialBut = (Button) findViewById(R.id.socialButton);
         //button setOnClickListener
         socialBut.setOnClickListener(new View.OnClickListener() {
 
@@ -169,105 +163,132 @@ public class MainActivity extends ActionBarActivity {
 			}
 			});
 			
+    }
+    
+    
+    public void healthButton() {
+    	final ImageView barLevelHealth = (ImageView) findViewById(R.id.progressBar2);
+    	final EditText healthCounter = (EditText) findViewById(R.id.healthLevelCountEditText);
+    	final EditText lvlHealth = (EditText) findViewById(R.id.levelHealthEditText);
+        final Button healthBut = (Button) findViewById(R.id.healthButton);
         
-	        healthBut.setOnClickListener(new View.OnClickListener() {
+        healthBut.setOnClickListener(new View.OnClickListener() {
 
-				@Override
-				public void onClick(View v) {
-					//als knop geklikt is, gaat de progress met +10 erbij, wordt dat ook omgezet in tekstveld
-					if (v == healthBut) {					
-						
-						levelProgress2 += 10;
-						stringCounter2 = Integer.toString(levelProgress2);
-						healthCounter.setText(stringCounter2);						
-					}			
+			@Override
+			public void onClick(View v) {
+				//als knop geklikt is, gaat de progress met +10 erbij, wordt dat ook omgezet in tekstveld
+				if (v == healthBut) {					
 					
-					//
-					if (levelProgress2 % 50 == 0) {					
-						levelColor2 += 1;			
-					}
-					
-					if (levelColor2 > 2) {						
-						levelColor2 = 0;						
-					}					
-					
-					if (levelProgress2 % 50 == 0) {
-
-						healthLvlCounter += 1;
-						healthLevelStrCounter = Integer.toString(healthLvlCounter);
-						lvlHealth.setText(healthLevelStrCounter);	
-					}
-					
-					barLevelHealth.setImageResource(barHealthLevelColor[levelColor2]);
-	         		
-	         		
+					levelProgress2 += 10;
+					stringCounter2 = Integer.toString(levelProgress2);
+					healthCounter.setText(stringCounter2);						
+				}			
+				
+				//
+				if (levelProgress2 % 50 == 0) {					
+					levelColor2 += 1;			
 				}
-				});
-	        
-	        
-	        fitnessBut.setOnClickListener(new View.OnClickListener() {
+				
+				if (levelColor2 > 2) {						
+					levelColor2 = 0;						
+				}					
+				
+				if (levelProgress2 % 50 == 0) {
 
-				@Override
-				public void onClick(View v) {
-					
-							if (v == fitnessBut) {
-								levelProgress3 += 10;
-								stringCounter3 = Integer.toString(levelProgress3);
-								fitnessCounter.setText(stringCounter3);
-							}
-							
-							if (levelProgress3 % 50 == 0) {
-								levelColor3 += 1;				
-							}
-							
-							if (levelColor3 > 2) {					
-								levelColor3 = 0;					
-							}
-							
-							if (levelProgress3 % 50 == 0) {
-								
-								fitnessLvlCounter += 1;
-								fitnessLevelStrCounter = Integer.toString(fitnessLvlCounter);
-								lvlFitness.setText(fitnessLevelStrCounter);	
-							}
-							
-					barLevelFitness.setImageResource(barFitnessLevelColor[levelColor3]);
-					}
-				});
-	        
-	        		        
-	        walkBut.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					
-							if (v == walkBut) {
-								levelProgress4 += 10;
-								stringCounter4 = Integer.toString(levelProgress4);
-								walkCounter.setText(stringCounter4);						
-							}
-							
-							if (levelProgress4 % 50 == 0) {					
-								levelColor4 += 1;				
-							}
-							
-							if (levelColor4 > 2) {						
-								levelColor4 = 0;				
-							}
-							
-							if (levelProgress4 % 50 == 0) {								
-								walkLvlCounter += 1;
-								walkLevelStrCounter = Integer.toString(walkLvlCounter);
-								lvlWalk.setText(walkLevelStrCounter);	
-							}
-					
-					barLevelWalk.setImageResource(barWalkLevelColor[levelColor4]);
-					
-					}
-				});
-    		}
-	     
+					healthLvlCounter += 1;
+					healthLevelStrCounter = Integer.toString(healthLvlCounter);
+					lvlHealth.setText(healthLevelStrCounter);	
+				}
+				
+				barLevelHealth.setImageResource(barHealthLevelColor[levelColor2]);
+         		
+         		
+			}
+			});
         
+    	
+    }
+    
+    
+    
+    public void fitnessButton() {
+    	
+       final ImageView barLevelFitness = (ImageView) findViewById(R.id.progressBar3);
+       final EditText fitnessCounter = (EditText) findViewById(R.id.fitnessLevelCountEditText);
+       final EditText lvlFitness = (EditText) findViewById(R.id.levelFitnessEditText);
+       final Button fitnessBut = (Button) findViewById(R.id.fitnessButton);
+    	
+        fitnessBut.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				
+						if (v == fitnessBut) {
+							levelProgress3 += 10;
+							stringCounter3 = Integer.toString(levelProgress3);
+							fitnessCounter.setText(stringCounter3);
+						}
+						
+						if (levelProgress3 % 50 == 0) {
+							levelColor3 += 1;				
+						}
+						
+						if (levelColor3 > 2) {					
+							levelColor3 = 0;					
+						}
+						
+						if (levelProgress3 % 50 == 0) {
+							
+							fitnessLvlCounter += 1;
+							fitnessLevelStrCounter = Integer.toString(fitnessLvlCounter);
+							lvlFitness.setText(fitnessLevelStrCounter);	
+						}
+						
+				barLevelFitness.setImageResource(barFitnessLevelColor[levelColor3]);
+				}
+			});
+    }
+    
+    
+    public void walkButton() {
+        
+      final ImageView barLevelWalk = (ImageView) findViewById(R.id.progressBar4);
+      final EditText walkCounter = (EditText) findViewById(R.id.walkLevelCountEditText);
+      final EditText lvlWalk = (EditText) findViewById(R.id.levelWalkEditText);
+      final Button  walkBut = (Button) findViewById(R.id.walkButton);
+        
+        walkBut.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				
+						if (v == walkBut) {
+							levelProgress4 += 10;
+							stringCounter4 = Integer.toString(levelProgress4);
+							walkCounter.setText(stringCounter4);						
+						}
+						
+						if (levelProgress4 % 50 == 0) {					
+							levelColor4 += 1;				
+						}
+						
+						if (levelColor4 > 2) {						
+							levelColor4 = 0;				
+						}
+						
+						if (levelProgress4 % 50 == 0) {								
+							walkLvlCounter += 1;
+							walkLevelStrCounter = Integer.toString(walkLvlCounter);
+							lvlWalk.setText(walkLevelStrCounter);	
+						}
+				
+				barLevelWalk.setImageResource(barWalkLevelColor[levelColor4]);
+				
+				}
+			});
+    	
+    }
+    
     
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
